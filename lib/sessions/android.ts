@@ -46,7 +46,7 @@ export async function connectAndroidSession (
   clearLog: boolean = false
 ): Promise<IsolateSocket> {
   const observatoryWsUri = await getObservatoryWsUri.bind(this)(androiddriver, caps, clearLog);
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   this.log.info(`Connecting to the observatory socket at ${observatoryWsUri}`);
   return await connectSocket.bind(this)(observatoryWsUri, caps);
 }
